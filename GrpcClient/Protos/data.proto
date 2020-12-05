@@ -1,0 +1,32 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "GrpcClient";
+
+package data;
+
+service DataSender
+{
+  rpc SendRawData (stream SendingData) returns (Reply);
+}
+
+message SendingData
+{
+  int32 id = 1;
+  string countryName = 2;
+  int32 countryPopulation = 3;
+  int32 countrySquare = 4;
+  string capitalName = 5;
+  int32 capitalFoundation = 6;
+  string totalGdp = 7;
+  int32 humanGdp = 8;
+  int32 gdpYear = 9;
+  string languageName = 10;
+  int32 languagePrevalencePlace = 11;
+  string regionName = 12;
+  string regionCenter = 13;
+}
+
+message Reply
+{
+  string replyStr = 1;
+}
